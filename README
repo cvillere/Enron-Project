@@ -1,0 +1,19 @@
+################################################################################
+
+#README
+
+
+*In this project I split up the work I did using various algorithms into
+three separate files. 
+
+
+*The poi_id.py contains my best performing algorithm and the one I am using 
+to meet the project's scoring requirement. 
+
+
+*Poi_id_DT.py includes the work I did on a decision tree algorithm 
+and poi_id_GB.py includes the work I did on a GaussianNB algorithm. 
+
+
+*The project's questions and my responses are also in a separate file in the 
+directory.  
