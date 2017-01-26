@@ -1,0 +1,81 @@
+1) How to return the entire key value pair from a 
+dicitionary
+
+http://stackoverflow.com/questions/5320871/in-list-of-dicts-find-min-value-of-a-common-dict-field
+
+lst = [{'price': 99, 'barcode': '2342355'}, {'price': 88, 'barcode': '2345566'}]
+
+maxPricedItem = max(lst, key=lambda x:x['price'])
+minPricedItem = min(lst, key=lambda x:x['price'])
+
+2) How to return the key that has a max value in a nested dictionary. 
+
+http://stackoverflow.com/questions/31795092/key-in-nested-dictionary-if-it-contains-nan-value
+
+I have following data in python
+
+my_dictionary = {
+      'key1': {'a': 1, 'b': 1, 'c': 10}, 
+      'key2': {'a': 1, 'b': 1, 'c': 'NaN'}, 
+      'key3': {'a': 1, 'b': 1, 'c': 12}
+       ...
+       ...
+}
+My Interest in to find key that has max value of C. So far so good following code is working but it does not give correct results if 'c' has NaN value as in my case? I wrote following code
+
+max(my_dictionary, key=lambda v: my_dictionary[v]['c'])
+what change I require in above code to account for NaN values in C?
+
+You could give a default value for the NaNs:
+
+print(max(my_dictionary, key=lambda v: my_dictionary[v]['c'] 
+     if isinstance(my_dictionary[v]['c'],int) else float("-inf")))
+You can also use a function to pass as the key instead of looking up the value twice and use Number to handle the case where you have more than just ints:
+
+from numbers import Number
+def key(x):
+    val = my_dictionary[x]['c']
+    return  val if isinstance(val, Number) else float("-inf")
+print(max(my_dictionary, key=key))
+
+
+3) How to get feature scores when using selectKBest to to dimension reduction
+
+http://stackoverflow.com/questions/32701649/how-to-get-the-scores-of-each-feature-from-sklearn-feature-selection-selectkbest
+
+
+4) How to use k-fold validaton on a naive bayes classifier
+
+http://stackoverflow.com/questions/16379313/how-to-use-the-a-k-fold-cross-validation-in-scikit-with-naive-bayes-classifier-a
+
+5) https://zyxo.wordpress.com/2011/07/04/how-to-use-the-settings-to-control-the-size-of-decision-trees/
+
+--good info on decision tree parameters
+
+
+6) http://scikit-learn.org/stable/modules/cross_validation.html
+
+--Using cross-val score to validate algorithms
+
+
+7) http://scikit-learn.org/stable/modules/model_evaluation.html
+
+--3.3 model evaluation parameter values to use in scoring cross validation models.
+
+
+8) https://discussions.udacity.com/t/inconsistent-results-with-stratifiedshufflesplit/190247
+
+--Helpful link from an udacity discussion board that demonstrates good structure of a
+model.
+
+
+9) https://discussions.udacity.com/t/how-to-find-out-the-features-selected-by-selectkbest/45118/5
+
+--How to get the name of the features and the score which is attached to each feature
+
+10) https://discussions.udacity.com/t/error-using-pipeline/171750/7
+
+--Post that tipped me off to the travel agency in the park data point that needed to be
+removed.
+
+
