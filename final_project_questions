@@ -36,10 +36,14 @@ I validated my analysis using StratifiedShuffleSplit. This is the best cross val
 6) Give at least 2 evaluation metrics and your average performance for each of them.  Explain an interpretation of your metrics that says something human-understandable about your algorithm’s performance. [relevant rubric item: “usage of evaluation metrics”]
 
 
---My final algorithm performed the same when I included the feature I made, and when I didn't include it. The accuracy, precision and recall scores respectively are .85060, .42191, and .32550. 
-My algorithm makes a correct prediction 85% of the time. This does seem like a pretty good number; however, due to the small size of dataset, if the algorithm guessed non-POI everytime, it would have an accuracy score of .874. Due to this knowledge of the dataset, accuracy is not a dependable metric upon which we can determine how accurate our classifier is. We must also take into account
-precision and recall. We want our classifer to have high precision and recall scores. Precision is a measure of how often a classifier's prediction is a false alarm. Recall is a measure of how often a classifier's prediction is just wrong. Higher precision and recall scores indicate fewer false alarms and incorrect predictions and more correct predictions. Lower precision and recall scores indicate more false alarms and incorrect predictions and fewer correct predictions. It is important to take all 3 of these scoring metrics into consideration when evaluating the performance of a classifier. Using just one metric could cause someone to think an algorithm performs better than it actually does.
+--Before I delve into my algorithm, I'd like to discuss the recall and precision metrics I used to 
+evaluate its performance. Here are my layman definitions:
+Recall: The ratio of correctly recalled instances to the number of all correct instances.
+Precision: The ratio of all correctly recalled instances to the number of recall instances attempted.
 
-My algorithm does a pretty good job of making correct predictions; however, the somewhat low 
-precision and recall scores indicate it is telling me there is a POI way more frequently than there actually is, and its telling me there isn't a POI when there actually is way too frequently. 
+More succintly, recall measures if something is remembered. Precision measures if that something is remembered correctly.  
+
+My final algorithm performed the same when I included the feature I made, and when I didn't include it. The accuracy, precision and recall scores respectively are .85060, .42191, and .32550. 
+My algorithm makes a correct prediction 85% of the time. This does seem like a pretty good number; however, due to the small size of dataset, if the algorithm guessed non-POI everytime, it would have an accuracy score of .874. Due to this knowledge of the dataset, accuracy is not a dependable metric upon which we can determine how accurate our classifier is. We must also take into account
+precision and recall. My algorithm does a pretty good job of making correct predictions; however, the somewhat low precision and recall scores indicate it is telling me there is a POI way more frequently than there actually is, and its telling me there isn't a POI when there actually is way too frequently. Both are validation score levels we should be wary of when determining how robust our classifier is. 
 

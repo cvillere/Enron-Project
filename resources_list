@@ -78,4 +78,11 @@ model.
 --Post that tipped me off to the travel agency in the park data point that needed to be
 removed.
 
+11) https://discussions.udacity.com/t/very-long-running-times-using-svc-gridsearchcv/34756/4
+
+--Post that tipped me off to Linear kernal not being a good idea for SVM
+
+12) http://hackercollider.com/articles/2016/06/03/recall-vs-precision/
+
+--Used to refine definition of recall and precision
 
